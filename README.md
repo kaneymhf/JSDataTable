@@ -1,4 +1,4 @@
-# JSDataTables
+# JSDataTable
 
 A lightweight, extendable, dependency-free javascript HTML table plugin. Similar to jQuery DataTables **for use in modern browsers**, but without the jQuery dependency. Note: If you want a version that works in very old browsers (IE, etc.), then head over to https://github.com/fiduswriter/Simple-DataTables-classic .
 
@@ -8,7 +8,7 @@ See the demos [here](https://fiduswriter.github.io/Simple-DataTables/).
 
 # CDN
 
-To use the CDN version of JSDataTables use either [https://cdn.jsdelivr.net/npm/jsdatatable@latest](https://cdn.jsdelivr.net/npm/jsdatatable@latest) or [https://unpkg.com/jsdatatable](https://unpkg.com/jsdatatable). You also need to add the CSS styling, so the elements you'll add to html head element can for example be these:
+To use the CDN version of JSDataTable use either [https://cdn.jsdelivr.net/npm/jsdatatable@latest](https://cdn.jsdelivr.net/npm/jsdatatable@latest) or [https://unpkg.com/jsdatatable](https://unpkg.com/jsdatatable). You also need to add the CSS styling, so the elements you'll add to html head element can for example be these:
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/jsdatatable@latest/dist/css/jsdatatable.css" rel="stylesheet" type="text/css">
@@ -48,11 +48,11 @@ LGPL
 
 ## npm
 ```
-npm install jsdatatables --save
+npm install jsdatatable --save
 ```
 ## Yarn
 ```
-yarn add jsdatatables
+yarn add jsdatatable
 ```
 
 ---
@@ -62,7 +62,7 @@ yarn add jsdatatables
 Then just initialise the plugin by import JSDataTable and either passing a reference to the table or a CSS3 selector string as the first parameter:
 
 ```javascript
-import {JSDataTable} from "jsdatatables"
+import {JSDataTable} from "jsdatatable"
 
 const myTable = document.querySelector("#myTable");
 const dataTable = new JSDataTable(myTable);
