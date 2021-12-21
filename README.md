@@ -11,8 +11,8 @@ See the demos [here](https://fiduswriter.github.io/Simple-DataTables/).
 To use the CDN version of JSDataTables use either [https://cdn.jsdelivr.net/npm/jsdatatable@latest](https://cdn.jsdelivr.net/npm/jsdatatable@latest) or [https://unpkg.com/jsdatatable](https://unpkg.com/jsdatatable). You also need to add the CSS styling, so the elements you'll add to html head element can for example be these:
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/jsdatatables@latest/dist/css/jsdatatable.css" rel="stylesheet" type="text/css">
-<script src="https://cdn.jsdelivr.net/npm/jsdatatables@latest" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/jsdatatable@latest/dist/css/jsdatatable.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/jsdatatable@latest" type="text/javascript"></script>
 ```
 
 
