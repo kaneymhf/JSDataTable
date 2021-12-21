@@ -2,17 +2,17 @@
 
 A lightweight, extendable, dependency-free javascript HTML table plugin. Similar to jQuery DataTables **for use in modern browsers**, but without the jQuery dependency. Note: If you want a version that works in very old browsers (IE, etc.), then head over to https://github.com/fiduswriter/Simple-DataTables-classic .
 
-Based on [Vanilla-DataTables](https://github.com/Mobius1/Vanilla-DataTables), but written in ES2018.
+Based on [Simple-DataTables](https://github.com/fiduswriter/Simple-DataTables), but with some improvements like select rows and localization.
 
 See the demos [here](https://fiduswriter.github.io/Simple-DataTables/).
 
 # CDN
 
-To use the CDN version of Simple-DataTables use either [https://cdn.jsdelivr.net/npm/simple-datatables@latest](https://cdn.jsdelivr.net/npm/simple-datatables@latest) or [https://unpkg.com/simple-datatables](https://unpkg.com/simple-datatables). You also need to add the CSS styling, so the elements you'll add to html head element can for example be these:
+To use the CDN version of JSDataTables use either [https://cdn.jsdelivr.net/npm/jsdatatables@latest](https://cdn.jsdelivr.net/npm/jsdatatables@latest) or [https://unpkg.com/jsdatatables](https://unpkg.com/jsdatatables). You also need to add the CSS styling, so the elements you'll add to html head element can for example be these:
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
-<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/jsdatatables@latest/dist/css/jsdatatable.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/jsdatatables@latest" type="text/javascript"></script>
 ```
 
 
@@ -23,21 +23,23 @@ LGPL
 
 ### Features
 
-* Sortable columns
+* Sortable columns respecting accents
 * Pagination
 * Searchable
-* Customisable layout
-* Customisable labels
-* Customise column rendering
+* Customizable layout
+* Customizable labels
+* Customize column rendering
 * Export to common formats like `csv`, `txt` `json`, and `sql`
 * Import `csv` and `json` data
 * Control column visibility
 * Reorder or swap columns
 * dayjs integration for sorting columns with datetime strings
-* Extentable with custom plugins [See the Simple-DataTables wiki](https://github.com/fiduswriter/Simple-DataTables/wiki/Plugins)
+* Selectable Rows
+* Localization Support
+* Extendable with custom plugins [See the Simple-Datatables wiki](https://github.com/fiduswriter/Simple-DataTables/wiki/Plugins)
 
 
-[Simple-DataTables Documentation](https://github.com/fiduswriter/Simple-DataTables/wiki)
+[Simple-Datatables Documentation](https://github.com/fiduswriter/Simple-DataTables/wiki)
 
 
 ---
@@ -46,28 +48,28 @@ LGPL
 
 ## npm
 ```
-npm install simple-datatables --save
+npm install jsdatatables --save
 ```
 ## Yarn
 ```
-yarn add simple-datatables
+yarn add jsdatatables
 ```
 
 ---
 
 ### Quick Start
 
-Then just initialise the plugin by import DataTable and either passing a reference to the table or a CSS3 selector string as the first parameter:
+Then just initialise the plugin by import JSDataTable and either passing a reference to the table or a CSS3 selector string as the first parameter:
 
 ```javascript
 import {JSDataTable} from "jsdatatables"
 
 const myTable = document.querySelector("#myTable");
-const dataTable = new DataTable(myTable);
+const dataTable = new JSDataTable(myTable);
 
 // or
 
-const dataTable = new DataTable("#myTable");
+const dataTable = new JSDataTable("#myTable");
 
 ```
 
