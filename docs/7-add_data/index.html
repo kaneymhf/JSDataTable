@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Data</title>
+
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+  <!-- DataTable Styles -->
+  <link rel="stylesheet" href="../dist/css/jsdatatable.css">
+  <link rel="stylesheet" href="../demo.css">
+</head>
+<body>
+  <h1>Add Data</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <div class="p-5">
+    Name
+    <input class="form-control" type="text" name="name" id="name" />
+    Country
+    <input class="form-control" type="text" name="name" id="country" />
+    <button class="btn btn-primary" onclick="addThis()">Add</button>
+  </div>
+
+ <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+ <script src="../dist/js/umd.js"></script>
+
+  <script>
+    let options = {
+        selectable: true,
+        columns: [
+          {
+            select: 0,
+            sortable: true,
+            sort: "asc",
+          },
+        ],
+        classes: {
+          table: ["table", "table-striped", "table-bordered", "table-responsive"],
+          header: ["table-dark"],
+          input: ["form-control"],
+          selector: ["form-select"],
+          checkbox: ["form-check-input"]
+        }
+    };
+
+    let table = new jsdatatable.JSDataTable("table", options);
+
+    function addThis() {
+        var name = document.getElementById("name");
+        var country = document.getElementById("country");
+        let update = [[name.value, country.value]];
+        name.value = "";
+        country.value = "";
+        table.insert({ data: update });
+      }
+  </script>
+
+</body>
+</html>
