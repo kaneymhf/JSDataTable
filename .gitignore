@@ -1,8 +1,8 @@
 /node_modules
-*.html
-*.css
-*.ico
+/*.html
+/*.css
+/*.ico
 /.vscode
 /.eslintrc.js
-package-lock.json
-tests
+/package-lock.json
+/tests
