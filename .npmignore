@@ -6,3 +6,4 @@
 /.eslintrc.js
 package-lock.json
 tests
+*.gitignore
