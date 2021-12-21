@@ -4,7 +4,7 @@ A lightweight, extendable, dependency-free javascript HTML table plugin. Similar
 
 Based on [Simple-DataTables](https://github.com/fiduswriter/Simple-DataTables), but with some improvements like select rows and localization.
 
-See the demos [here](https://fiduswriter.github.io/Simple-DataTables/).
+See the demos [here](https://kaneymhf.github.io/JSDataTable/).
 
 # CDN
 
