@@ -8,11 +8,11 @@ See the demos [here](https://kaneymhf.github.io/JSDataTable/).
 
 # CDN
 
-To use the CDN version of JSDataTable use either [https://cdn.jsdelivr.net/npm/jsdatatable@latest](https://cdn.jsdelivr.net/npm/jsdatatable@latest) or [https://unpkg.com/jsdatatable](https://unpkg.com/jsdatatable). You also need to add the CSS styling, so the elements you'll add to html head element can for example be these:
+To use the CDN version of JSDataTable use either [https://cdn.jsdelivr.net/npm/jsdatatables@latest](https://cdn.jsdelivr.net/npm/jsdatatables@latest) or [https://unpkg.com/jsdatatables](https://unpkg.com/jsdatatables). You also need to add the CSS styling, so the elements you'll add to html head element can for example be these:
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/jsdatatable@latest/dist/css/jsdatatable.css" rel="stylesheet" type="text/css">
-<script src="https://cdn.jsdelivr.net/npm/jsdatatable@latest" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/jsdatatables@latest/dist/css/jsdatatables.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/jsdatatables@latest" type="text/javascript"></script>
 ```
 
 
@@ -48,11 +48,11 @@ LGPL
 
 ## npm
 ```
-npm install jsdatatable --save
+npm install jsdatatables --save
 ```
 ## Yarn
 ```
-yarn add jsdatatable
+yarn add jsdatatables
 ```
 
 ---
@@ -62,7 +62,7 @@ yarn add jsdatatable
 Then just initialise the plugin by import JSDataTable and either passing a reference to the table or a CSS3 selector string as the first parameter:
 
 ```javascript
-import {JSDataTable} from "jsdatatable"
+import {JSDataTable} from "jsdatatables"
 
 const myTable = document.querySelector("#myTable");
 const dataTable = new JSDataTable(myTable);

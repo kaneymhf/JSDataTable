@@ -6,7 +6,7 @@ import { terser } from "rollup-plugin-terser";
 
 export default [
   {
-    input: "src/js/jsdatatable.js",
+    input: "src/js/jsdatatables.js",
     plugins: [
       resolve({ browser: true }),
       commonjs(),
@@ -22,7 +22,7 @@ export default [
     },
   },
   {
-    input: "src/js/jsdatatable.js",
+    input: "src/js/jsdatatables.js",
     plugins: [
       resolve({ browser: true }),
       commonjs(),
@@ -38,7 +38,7 @@ export default [
     },
   },
   {
-    input: "src/js/jsdatatable.js",
+    input: "src/js/jsdatatables.js",
     plugins: [
       resolve({ browser: true }),
       commonjs(),

@@ -5,19 +5,21 @@ import resolve from "@rollup/plugin-node-resolve"
 import babel from "rollup-plugin-babel"
 import { terser } from "rollup-plugin-terser"
 
-export default [{
-    input: "src/js/jsdatatable.js",
+export default [
+  {
+    input: "src/js/jsdatatables.js",
     plugins: [
-        resolve({ browser: true }),
-        commonjs(),
-        nodePolyfills(),
-        babel(),
-        terser()
+      resolve({ browser: true }),
+      commonjs(),
+      nodePolyfills(),
+      babel(),
+      terser(),
     ],
     output: {
-        file: "docs/dist/js/module.js",
-        inlineDynamicImports: true,
-        format: "es",
-        sourcemap: false
-    }
-}];
+      file: "docs/dist/js/module.js",
+      inlineDynamicImports: true,
+      format: "es",
+      sourcemap: false,
+    },
+  },
+];
