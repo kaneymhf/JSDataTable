@@ -1,0 +1,228 @@
+.jsDataTable-wrapper.no-header .jsDataTable-container {
+	border-top: 1px solid #d9d9d9;
+}
+
+.jsDataTable-wrapper.no-footer .jsDataTable-container {
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.jsDataTable-top,
+.jsDataTable-bottom {
+	padding: 8px 0;
+	display: block;
+    // justify-content: space-between;
+	// flex-flow: row;
+}
+
+// .jsDataTable-top::after,
+// .jsDataTable-bottom::after {
+//   content: "";
+//   flex: auto;
+// }
+
+.jsDataTable-top > nav:first-child,
+.jsDataTable-top > div:first-child,
+.jsDataTable-bottom > nav:first-child,
+.jsDataTable-bottom > div:first-child {
+	float: left;
+}
+
+.jsDataTable-top > nav:last-child,
+.jsDataTable-top > div:last-child,
+.jsDataTable-bottom > nav:last-child,
+.jsDataTable-bottom > div:last-child {
+	float: right;
+}
+
+.jsDataTable-input {
+	padding: 6px 12px;
+}
+
+.jsDataTable-info {
+	margin: 7px 0;
+}
+
+/* PAGER */
+.jsDataTable-pagination ul {
+	margin: 0;
+	padding-left: 0;
+}
+
+.jsDataTable-pagination li {
+	list-style: none;
+	float: left;
+}
+
+.jsDataTable-pagination a {
+	border: 1px solid transparent;
+	float: left;
+	margin-left: 2px;
+	padding: 6px 12px;
+	position: relative;
+	text-decoration: none;
+	color: #333;
+}
+
+.jsDataTable-pagination a:hover {
+	background-color: #d9d9d9;
+}
+
+.jsDataTable-pagination .active a,
+.jsDataTable-pagination .active a:focus,
+.jsDataTable-pagination .active a:hover {
+	background-color: #d9d9d9;
+	cursor: default;
+}
+
+.jsDataTable-pagination .ellipsis a,
+.jsDataTable-pagination .disabled a,
+.jsDataTable-pagination .disabled a:focus,
+.jsDataTable-pagination .disabled a:hover {
+	cursor: not-allowed;
+}
+
+.jsDataTable-pagination .disabled a,
+.jsDataTable-pagination .disabled a:focus,
+.jsDataTable-pagination .disabled a:hover {
+	cursor: not-allowed;
+	opacity: 0.4;
+}
+
+.jsDataTable-pagination .pager a {
+	font-weight: bold;
+}
+
+.jsDataTable-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	overflow-y: hidden;
+}
+
+/* TABLE */
+.jsDataTable-table {
+	max-width: 100%;
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: separate;
+}
+
+.jsDataTable-table > tbody > tr > td,
+.jsDataTable-table > tbody > tr > th,
+.jsDataTable-table > tfoot > tr > td,
+.jsDataTable-table > tfoot > tr > th,
+.jsDataTable-table > thead > tr > td,
+.jsDataTable-table > thead > tr > th {
+	vertical-align: top;
+	padding: 8px 10px;
+}
+
+.jsDataTable-table > thead > tr > th {
+	vertical-align: bottom;
+	text-align: left;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.jsDataTable-table > tfoot > tr > th {
+	vertical-align: bottom;
+	text-align: left;
+	border-top: 1px solid #d9d9d9;
+}
+
+.jsDataTable-table th {
+	vertical-align: bottom;
+	text-align: left;
+}
+
+.jsDataTable-table th a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.jsDataTable-sorter {
+	display: inline-block;
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+.jsDataTable-sorter::before,
+.jsDataTable-sorter::after {
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	right: 4px;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	opacity: 0.2;
+}
+
+
+.jsDataTable-sorter::before {
+	border-top: 4px solid #000;
+	bottom: 0px;
+}
+
+.jsDataTable-sorter::after {
+	border-bottom: 4px solid #000;
+	border-top: 4px solid transparent;
+	top: 0px;
+}
+
+thead.table-dark .jsDataTable-sorter::before {
+	border-top: 4px solid #fff;
+}
+
+thead.table-dark .jsDataTable-sorter::after {
+	border-bottom: 4px solid #fff;
+}
+
+
+.asc .jsDataTable-sorter::after,
+.desc .jsDataTable-sorter::before {
+	opacity: 0.6;
+}
+
+thead.table-dark .asc .jsDataTable-sorter::after,
+thead.table-dark .desc .jsDataTable-sorter::before {
+	opacity: 0.8;
+}
+
+.jsDataTables-empty {
+	text-align: center;
+}
+
+.jsDataTable-top::after, .jsDataTable-bottom::after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+
+.jsDataTable-select-cell {
+    width: 20px;
+}
+
+.jsDataTable-selector {
+	padding: .375rem 2.25rem .375rem .75rem;
+    display: unset;
+    width: unset;
+}
+
+
+@media screen and (max-width: 560px) {
+	.jsDataTable-top,
+	.jsDataTable-bottom {
+		display: block;
+	}
+
+	.jsDataTable-top > nav:last-child,
+	.jsDataTable-top > div:last-child,
+	.jsDataTable-bottom > nav:last-child,
+	.jsDataTable-bottom > div:last-child {
+		float: left;
+	}
+}
