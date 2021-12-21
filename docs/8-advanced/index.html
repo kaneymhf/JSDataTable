@@ -13,7 +13,7 @@
     />
 
   <!-- DataTable Styles -->
-  <link rel="stylesheet" href="../dist/css/jsdatatable.css">
+  <link rel="stylesheet" href="../dist/css/jsdatatables.css">
   <link rel="stylesheet" href="../demo.css">
 </head>
 <body style="padding: 15px">
@@ -22,7 +22,7 @@
   
   <div class="row mb-2">
     <div class="col-md-8 col-12 border border-success rounded me-5">
-      <table id="jsdatatable">
+      <table id="jsdatatables">
       </table>
     </div>
   
@@ -54,7 +54,8 @@
       crossorigin="anonymous"
     ></script>
 
- <script src="../dist/js/umd.js"></script>
+    <!-- CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jsdatatables@latest"></script>
 
   <script>
     let btn = '<button onclick="deleteRow(this)" class="btn btn-danger">X</button>';
@@ -97,7 +98,7 @@
         checkbox: ["form-check-input"]
       }
     };
-    let table = new jsdatatable.JSDataTable("table", options);
+    let table = new jsdatatables.JSDataTable("table", options);
 
     function addThis() {
       var name = document.getElementById("name");

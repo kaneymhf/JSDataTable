@@ -13,7 +13,7 @@
     />
 
   <!-- DataTable Styles -->
-  <link rel="stylesheet" href="../dist/css/jsdatatable.css">
+  <link rel="stylesheet" href="../dist/css/jsdatatables.css">
   <link rel="stylesheet" href="../demo.css">
 </head>
 <body>
@@ -154,7 +154,8 @@
       crossorigin="anonymous"
     ></script>
 
- <script src="../dist/js/umd.js"></script>
+<!-- CDN -->
+<script src="https://cdn.jsdelivr.net/npm/jsdatatables@latest"></script>
 
   <script>
     let langSelect = document.getElementById("lang");
@@ -177,7 +178,7 @@
         }
     };
 
-    let table = new jsdatatable.JSDataTable("table", options);
+    let table = new jsdatatables.JSDataTable("table", options);
 
     function changeMe() {
       table.destroy();

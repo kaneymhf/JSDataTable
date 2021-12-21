@@ -76,9 +76,9 @@ const dataTable = new JSDataTable("#myTable");
 You can also pass the options object as the second parameter:
 
 ```javascript
-import {DataTable} from "simple-datatables"
+import {JSDataTable} from "jsdatatables"
 
-const dataTable = new DataTable("#myTable", {
+const dataTable = new JSDataTable("#myTable", {
 	searchable: false,
 	fixedHeight: true,
 	...
@@ -88,7 +88,7 @@ const dataTable = new DataTable("#myTable", {
 If using the CDN:
 
 ```javascript
-const dataTable = new simpleDatatables.DataTable("#myTable", {
+const dataTable = new jsdatatables.DataTable("#myTable", {
 	searchable: false,
 	fixedHeight: true,
 	...

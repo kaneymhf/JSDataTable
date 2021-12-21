@@ -13,7 +13,7 @@
     />
 
   <!-- DataTable Styles -->
-  <link rel="stylesheet" href="../dist/css/jsdatatable.css">
+  <link rel="stylesheet" href="../dist/css/jsdatatables.css">
   <link rel="stylesheet" href="../demo.css">
   </head>
 </head>
@@ -144,10 +144,11 @@
       crossorigin="anonymous"
     ></script>
 
- <script src="../dist/js/umd.js"></script>
+<!-- CDN -->
+<script src="https://cdn.jsdelivr.net/npm/jsdatatables@latest"></script>
 
   <script>
-    const table = new jsdatatable.JSDataTable("table", {
+      const table = new jsdatatables.JSDataTable("table", {
         selectable: true,
         columns: [
           {
