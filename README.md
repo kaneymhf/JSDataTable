@@ -6,7 +6,7 @@ Based on [Simple-DataTables](https://github.com/fiduswriter/Simple-DataTables), 
 
 See the demos [here](https://kaneymhf.github.io/JSDataTable/).
 
-# CDN
+## CDN
 
 To use the CDN version of JSDataTable use either [https://cdn.jsdelivr.net/npm/jsdatatables@latest](https://cdn.jsdelivr.net/npm/jsdatatables@latest) or [https://unpkg.com/jsdatatables](https://unpkg.com/jsdatatables). You also need to add the CSS styling, so the elements you'll add to html head element can for example be these:
 
@@ -94,3 +94,13 @@ const dataTable = new jsdatatables.DataTable("#myTable", {
 	...
 })
 ```
+
+### Localization
+
+Currently Supported Locales:
+ * EN
+ * PT
+ * ES
+ * DE
+ * IT
+ * RU
