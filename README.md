@@ -88,7 +88,7 @@ const dataTable = new JSDataTable("#myTable", {
 If using the CDN:
 
 ```javascript
-const dataTable = new jsdatatables.DataTable("#myTable", {
+const dataTable = new jsdatatables.JSDataTable("#myTable", {
 	searchable: false,
 	fixedHeight: true,
 	...

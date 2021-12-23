@@ -230,7 +230,7 @@ export class JSDataTable {
     // Convert data to HTML
     if (options.data) {
       if (options.selectable) {
-        if (options.data.headings.length > 0) {
+        if (options.data.headings && options.data.headings.length > 0) {
           options.data.headings = this.makeSelectAll(options.data.headings);
         }
 
