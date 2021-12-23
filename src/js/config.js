@@ -27,6 +27,10 @@ export const defaultConfig = {
   truncatePager: true,
   pagerDelta: 2,
 
+  data: {
+    data: [],
+  },
+
   scrollY: "",
 
   fixedColumns: true,
@@ -41,7 +45,7 @@ export const defaultConfig = {
   // Customise the layout
   layout: {
     top: "{select}{search}",
-    bottom: "{info}{pager}"
+    bottom: "{info}{pager}",
   },
 
   labels,
@@ -51,6 +55,6 @@ export const defaultConfig = {
     header: [],
     input: [],
     selector: [],
-    checkbox: []
-  }
+    checkbox: [],
+  },
 };

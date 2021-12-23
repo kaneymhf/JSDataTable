@@ -12,37 +12,40 @@ export const dataToTable = function (data) {
     this.dom.classList.add(...this.options.classes.table);
 
     if (data.headings) {
-        thead = createElement("thead")
-        const tr = createElement("tr")
-        data.headings.forEach(col => {
-            const td = createElement("th", {
-                html: col
-            })
-            tr.appendChild(td)
-        })
+      thead = createElement("thead");
+      const tr = createElement("tr");
+      data.headings.forEach((col) => {
+        const td = createElement("th", {
+          html: col,
+        });
+        if (this.options.selectable) {
+          td.classList.add("jsDataTable-select-cell");
+        }
+        tr.appendChild(td);
+      });
 
-        thead.appendChild(tr)
+      thead.appendChild(tr);
     }
 
     if (data.data && data.data.length) {
-        tbody = createElement("tbody")
-        data.data.forEach(rows => {
-            if (data.headings) {
-                if (data.headings.length !== rows.length) {
-                    throw new Error(
-                      "The number of rows do not match the number of headings"
-                    );
-                }
-            }
-            const tr = createElement("tr")
-            rows.forEach(value => {
-                const td = createElement("td", {
-                    html: value
-                })
-                tr.appendChild(td)
-            })
-            tbody.appendChild(tr)
-        })
+      tbody = createElement("tbody");
+      data.data.forEach((rows) => {
+        if (data.headings) {
+          if (data.headings.length !== rows.length) {
+            throw new Error(
+              "The number of rows do not match the number of headings"
+            );
+          }
+        }
+        const tr = createElement("tr");
+        rows.forEach((value) => {
+          const td = createElement("td", {
+            html: value,
+          });
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
     }
 
     if (thead) {

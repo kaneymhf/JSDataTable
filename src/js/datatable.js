@@ -30,14 +30,18 @@ export class JSDataTable {
       ...options,
       layout: {
         ...defaultConfig.layout,
-        ...options.layout
+        ...options.layout,
       },
       labels: {
         ...labels,
-        ...options.labels
+        ...options.labels,
       },
       classes: {
-        ...defaultConfig.classes
+        ...defaultConfig.classes,
+      },
+      data: {
+        ...defaultConfig.data,
+        ...options.data
       }
     };
 
@@ -148,7 +152,7 @@ export class JSDataTable {
         },
       };
 
-      if (options.classes){
+      if (options.classes) {
         for (const [key, value] of Object.entries(options.classes)) {
           options.classes[key] = value.concat(this.options.classes[key]);
         }
@@ -211,6 +215,15 @@ export class JSDataTable {
       return false;
     }
 
+    this.renderData();
+  }
+
+  /**
+   * Render the instance
+   * @param  {String} type
+   * @return {Void}
+   */
+  renderData() {
     const options = this.options;
     let template = "";
 
@@ -236,8 +249,9 @@ export class JSDataTable {
         const th = document.createElement("th");
         th.classList.add("jsDataTable-select-cell");
         th.appendChild(this.makeCheckbox(true));
-        this.dom.tHead.rows.item(0)
-                    .insertBefore(th, this.dom.tHead.rows.item(0).firstChild);
+        this.dom.tHead.rows
+          .item(0)
+          .insertBefore(th, this.dom.tHead.rows.item(0).firstChild);
 
         // Put the checkbox on rows
         const rows = this.dom.tBodies[0].querySelectorAll("tr");
@@ -389,10 +403,10 @@ export class JSDataTable {
 
     // Paginator
     const paginatorWrapper = createElement("nav", {
-      class: "jsDataTable-pagination"
+      class: "jsDataTable-pagination",
     });
     const paginator = createElement("ul", {
-      class: "jsDataTable-pagination-list"
+      class: "jsDataTable-pagination-list",
     });
     paginatorWrapper.appendChild(paginator);
 
@@ -458,6 +472,7 @@ export class JSDataTable {
     input.classList.add(...options.classes.input);
 
     this.bindEvents();
+
   }
 
   getData() {
@@ -1244,7 +1259,7 @@ export class JSDataTable {
   }
 
   makeSelect(row) {
-    const sel = this.makeCheckbox()
+    const sel = this.makeCheckbox();
     row.unshift(sel.outerHTML);
 
     return row;
@@ -1295,6 +1310,7 @@ export class JSDataTable {
       }
 
       if (data.data && Array.isArray(data.data)) {
+        data.data = this.preparedData(data.data);
         for (let i = 0; i < data.data.length; i++) {
           data.data[i] = this.makeSelect(data.data[i]);
         }
@@ -1314,7 +1330,6 @@ export class JSDataTable {
         rows.push(r);
       });
     }
-
     if (rows.length) {
       this.rows().add(rows);
 
@@ -1324,6 +1339,32 @@ export class JSDataTable {
     this.update();
     this.setColumns();
     this.fixColumns();
+  }
+
+  preparedData(data) {
+      const preparedData = [];
+      for (let i = 0; i < data.length; i++) {
+        let aux = [];
+        if (typeof data[i] === "object" && data[i] !== null) {
+          aux = Object.values(data[i]);
+          for (let j = 0; j < aux.length; j++) {
+            if (typeof aux[j] !== "string") {
+              aux[j] = `${aux[j]}`;
+            }
+          }
+        } else if (Array.isArray(data[i])) {
+          for (let j = 0; j < data[i].length; j++) {
+            if (typeof data[i][j] !== "string") {
+              data[i][j] = `${data[i][j]}`;
+            }
+          }
+          aux = data[i];
+        }
+        if (aux.length > 0) {
+          preparedData.push(aux);
+        }
+      }
+    return preparedData;
   }
 
   /**
