@@ -1,6 +1,6 @@
 {
     "name": "jsdatatables",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "DataTables made in Vanilla JS - With advanced functions, select rows, sort accented words and localization",
     "main": "dist/js/jsdatatables.js",
     "jsdelivr": "dist/js/umd/jsdatatables.js",
