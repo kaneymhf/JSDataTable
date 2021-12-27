@@ -1,9 +1,11 @@
 /node_modules
-*.html
-*.css
+/docs
+/src
+/*.html
+/*.css
 *.ico
 /.vscode
 /.eslintrc.js
 package-lock.json
-tests
+/tests
 *.gitignore
