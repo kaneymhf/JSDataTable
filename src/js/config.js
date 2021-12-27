@@ -27,10 +27,6 @@ export const defaultConfig = {
   truncatePager: true,
   pagerDelta: 2,
 
-  data: {
-    data: [],
-  },
-
   scrollY: "",
 
   fixedColumns: true,

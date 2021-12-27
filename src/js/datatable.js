@@ -228,7 +228,7 @@ export class JSDataTable {
     let template = "";
 
     // Convert data to HTML
-    if (options.data) {
+    if (options.data && options.data.headings && options.data.data) {
       if (options.selectable) {
         if (options.data.headings && options.data.headings.length > 0) {
           options.data.headings = this.makeSelectAll(options.data.headings);
