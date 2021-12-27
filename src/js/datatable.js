@@ -38,10 +38,6 @@ export class JSDataTable {
       },
       classes: {
         ...defaultConfig.classes,
-      },
-      data: {
-        ...defaultConfig.data,
-        ...options.data
       }
     };
 
@@ -227,8 +223,10 @@ export class JSDataTable {
     const options = this.options;
     let template = "";
 
+    console.log(options.data);
+
     // Convert data to HTML
-    if (options.data && options.data.headings && options.data.data) {
+    if (options.data) {
       if (options.selectable) {
         if (options.data.headings && options.data.headings.length > 0) {
           options.data.headings = this.makeSelectAll(options.data.headings);
