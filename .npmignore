@@ -9,3 +9,6 @@
 package-lock.json
 /tests
 *.gitignore
+/README.md
+rollup.config.js
+rollup.docs.config.js

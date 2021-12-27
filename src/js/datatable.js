@@ -223,8 +223,6 @@ export class JSDataTable {
     const options = this.options;
     let template = "";
 
-    console.log(options.data);
-
     // Convert data to HTML
     if (options.data) {
       if (options.selectable) {
