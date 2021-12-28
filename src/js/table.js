@@ -14,11 +14,11 @@ export const dataToTable = function (data) {
     if (data.headings) {
       thead = createElement("thead");
       const tr = createElement("tr");
-      data.headings.forEach((col) => {
+      data.headings.forEach((col, idx) => {
         const td = createElement("th", {
           html: col,
         });
-        if (this.options.selectable) {
+        if (this.options.selectable && idx == 0) {
           td.classList.add("jsDataTable-select-cell");
         }
         tr.appendChild(td);

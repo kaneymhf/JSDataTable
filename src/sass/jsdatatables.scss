@@ -208,6 +208,10 @@ thead.table-dark .desc .jsDataTable-sorter::before {
     width: unset;
 }
 
+.jsDataTable-select-cell {
+	width: 0.1% !important;
+}
+
 
 @media screen and (max-width: 560px) {
 	.jsDataTable-top,
