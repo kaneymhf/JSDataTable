@@ -38,7 +38,7 @@ export class JSDataTable {
       },
       classes: {
         ...defaultConfig.classes,
-      }
+      },
     };
 
     if (options.classes) {
@@ -107,6 +107,18 @@ export class JSDataTable {
     for (let i = 0; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
         checked++;
+      }
+    }
+
+    return checked;
+  }
+
+  getSelectedRows() {
+    const checked = [];
+    const checkboxes = document.getElementsByName("jsDataTable_select");
+    for (let i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        checked.push(checkboxes[i].closest("tr").dataIndex);
       }
     }
 
@@ -468,7 +480,6 @@ export class JSDataTable {
     input.classList.add(...options.classes.input);
 
     this.bindEvents();
-
   }
 
   getData() {
@@ -695,6 +706,20 @@ export class JSDataTable {
         const t = e.target.closest("a");
         if (t && t.nodeName.toLowerCase() === "a") {
           if (t.hasAttribute("data-page")) {
+            if (options.selectable) {
+              const checkboxes = document.getElementsByName(
+                "jsDataTable_select"
+              );
+              const selectAll = this.wrapper.querySelector(
+                "#jsDataTable_select_all"
+              );
+
+              for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+              }
+              selectAll.checked = false;
+
+            }
             this.page(t.getAttribute("data-page"));
             e.preventDefault();
           } else if (
@@ -1338,28 +1363,28 @@ export class JSDataTable {
   }
 
   preparedData(data) {
-      const preparedData = [];
-      for (let i = 0; i < data.length; i++) {
-        let aux = [];
-        if (typeof data[i] === "object" && data[i] !== null) {
-          aux = Object.values(data[i]);
-          for (let j = 0; j < aux.length; j++) {
-            if (typeof aux[j] !== "string") {
-              aux[j] = `${aux[j]}`;
-            }
+    const preparedData = [];
+    for (let i = 0; i < data.length; i++) {
+      let aux = [];
+      if (typeof data[i] === "object" && data[i] !== null) {
+        aux = Object.values(data[i]);
+        for (let j = 0; j < aux.length; j++) {
+          if (typeof aux[j] !== "string") {
+            aux[j] = `${aux[j]}`;
           }
-        } else if (Array.isArray(data[i])) {
-          for (let j = 0; j < data[i].length; j++) {
-            if (typeof data[i][j] !== "string") {
-              data[i][j] = `${data[i][j]}`;
-            }
+        }
+      } else if (Array.isArray(data[i])) {
+        for (let j = 0; j < data[i].length; j++) {
+          if (typeof data[i][j] !== "string") {
+            data[i][j] = `${data[i][j]}`;
           }
-          aux = data[i];
         }
-        if (aux.length > 0) {
-          preparedData.push(aux);
-        }
+        aux = data[i];
       }
+      if (aux.length > 0) {
+        preparedData.push(aux);
+      }
+    }
     return preparedData;
   }
 
