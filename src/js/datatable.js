@@ -557,6 +557,8 @@ export class JSDataTable {
     if (this.currentPage == 1) {
       this.fixHeight();
     }
+
+    this.updateToggleEvents()
   }
 
   /**
@@ -741,7 +743,7 @@ export class JSDataTable {
       const selectAll = this.wrapper.querySelector("#jsDataTable_select_all");
       selectAll.addEventListener(
         "click",
-        (e) => {
+        e => {
           if (e.isTrusted) {
             const checkboxes = document.getElementsByName("jsDataTable_select");
 
@@ -751,7 +753,7 @@ export class JSDataTable {
 
             const details = {
               selectedRows: this.dtCountChecked(),
-              totalRows: checkboxes.length,
+              totalRows: checkboxes.length
             };
 
             this.emit("datatable.select", details);
@@ -954,18 +956,28 @@ export class JSDataTable {
 
     this.rows().update();
 
-    if (this.options.selectable) {
-      const selects = document.querySelectorAll(".jsDataTable_select");
-      if (selects.length > 0) {
-        for (let i = 0; i < selects.length; i++) {
-          selects[i].onclick = (e) => {
-            if (e.isTrusted) {
-              this.dtToggleIndividual();
-            }
-          };
-        }
-      }
-    }
+    this.updateToggleEvents();
+  }
+
+  updateToggleEvents() {
+     if (this.options.selectable) {
+       const selects = document.querySelectorAll(".jsDataTable_select");
+       const selectAll = this.wrapper.querySelector("#jsDataTable_select_all");
+
+       selectAll.checked = false;
+       selectAll.indeterminate = false;
+
+       if (selects.length > 0) {
+         for (let i = 0; i < selects.length; i++) {
+           selects[i].checked = false;
+           selects[i].onclick = e => {
+             if (e.isTrusted) {
+               this.dtToggleIndividual();
+             }
+           };
+         }
+       }
+     }
     this.emit("datatable.update");
   }
 
@@ -973,7 +985,7 @@ export class JSDataTable {
     const selects = this.wrapper.querySelectorAll(".jsDataTable_select");
     const details = {
       selectedRows: this.dtCountChecked(),
-      totalRows: selects.length,
+      totalRows: selects.length
     };
 
     const selectAll = this.wrapper.querySelector("#jsDataTable_select_all");
